@@ -64,3 +64,11 @@ def table_to_array1(table,conn):
         '''
         return rows
         cur.close()
+
+def truncate_tbl(table,conn):
+    with conn:
+        cur = conn.cursor()
+        sql="DELETE FROM "+table
+        #print(sql)
+        cur.execute(sql)
+        cur.close()
