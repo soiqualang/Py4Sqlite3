@@ -1,6 +1,17 @@
 # Py4Sqlite3
 Some python functions for SQlite3 by soiqualang =))
 
+** You must make a connect to Sqlite Db first! **
+
+> Connect SQlite3 Db
+
+```python
+#Make DB
+!wget 'http://dev.dothanhlong.org/download/db1.db'
+conn=sqlite3.connect('db1.db')
+#c = conn.cursor()
+```
+
 > Insert record
 
 ```python
