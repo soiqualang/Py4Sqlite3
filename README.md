@@ -12,13 +12,20 @@ conn=sqlite3.connect('db1.db')
 #c = conn.cursor()
 ```
 
-> Insert record
+> Insert record by array
 
 ```python
 field=['ques','ans','info']
 value=['qqqq2','aaaaa2','iiiii2']
 
 insert_table('qa',field,value,conn)
+```
+
+> Insert by dict
+
+```python
+data1={'Trạm đo': 'Chợ Lách 1', 'Mực nước (cm)': 150, 'Thời gian đo': '2017-01-01'}
+insert_table_by_dict('cctl_giatri_mucnuoc',data1,conn)
 ```
 
 > Select record

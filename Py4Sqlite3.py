@@ -17,6 +17,20 @@ def insert_table(table,field,value,conn):
         cur.execute(sql_add_news)
         cur.close()
 
+def insert_table_by_dict (table,fieldsValues,conn):
+    with conn:
+        cur = conn.cursor()
+        fieldState =str()
+        valueState =str()
+        for field, value in fieldsValues.items():
+            fieldState = fieldState + "%s, "%(field)
+            valueState = valueState + "'%s', "%(value)
+        state = "INSERT INTO " + table + ' (' + fieldState[0:-2] + ') VALUES (' + valueState[0:-2] + ')'
+
+        print (state)
+        cur.execute(state)
+        cur.close()
+
 def dict_factory(cursor, row):
     d = {}
     for idx, col in enumerate(cursor.description):
