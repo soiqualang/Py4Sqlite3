@@ -23,7 +23,7 @@ def insert_table_by_dict (table,fieldsValues,conn):
         fieldState =str()
         valueState =str()
         for field, value in fieldsValues.items():
-            fieldState = fieldState + "%s, "%(field)
+            fieldState = fieldState + "\"%s\", "%(field)
             valueState = valueState + "'%s', "%(value)
         state = "INSERT INTO " + table + ' (' + fieldState[0:-2] + ') VALUES (' + valueState[0:-2] + ')'
 
